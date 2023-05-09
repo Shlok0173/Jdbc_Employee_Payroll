@@ -13,33 +13,44 @@ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 while(true) {
 System.out.println("PESS 1 ADD THE DATA");
 System.out.println("PRESS 2 UPDAE THE DATA");
-System.out.println("PRESS 3 DElETE THE DATA");
+System.out.println("PRESS 3 DELETE THE DATA");
 System.out.println("PRESS 4 EXIST");
 
 int choice=Integer.parseInt(br.readLine());
 
 if(choice == 1) {
-	System.out.println("Enter User Name");
+	System.out.println("Enter Employee Name");
 	String name=br.readLine();
 	
-	System.out.println("Enter User Salary");
+	System.out.println("Enter Employee Salary");
 	double salary=Double.parseDouble(br.readLine());
 			
-	System.out.println("Enter User StartDate");
+	System.out.println("Enter Employee StartDate");
 	String start_date=br.readLine();
 	
-	System.out.println("Enter User Gender");
+	System.out.println("Enter Employee Gender");
 	String gender=br.readLine();
 	
-	StudentInformation st=new StudentInformation(name,salary,start_date,gender);
+	EmployeeInformation st=new EmployeeInformation(name,salary,start_date,gender);
 	
-	  boolean answer=  StudentDao.insertStudentToDb(st);
+	  boolean answer=  EmployeeDao.insertEmployeeToDb(st);
 	if(answer) {
-		System.out.println("Student Added SuccessFull");
+		System.out.println("Employee Added SuccessFull");
 	}else {
-		System.out.println(" Student Added Fail");
+		System.out.println(" Employee Added Fail");
 	}
 	System.out.println(st);
+	
+}else if(choice==2) {
+	System.out.println("Enter Employee name to update");
+	String name=br.readLine();
+	EmployeeInformation st=new EmployeeInformation(name);
+	boolean answer=EmployeeDao.updateEmployeeToDb(st);
+	if(answer) {
+		System.out.println(" Update SuccessFull");
+	}else {
+		System.out.println(" Update fail");
+	}
 }
 }
 }

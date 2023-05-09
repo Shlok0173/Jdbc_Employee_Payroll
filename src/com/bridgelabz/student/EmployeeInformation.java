@@ -1,6 +1,6 @@
 package com.bridgelabz.student;
 
-public class StudentInformation {
+public class EmployeeInformation {
 
 private int id;
 private String Name;
@@ -59,7 +59,7 @@ public void setGender(String gender) {
 }
 
 
-public StudentInformation(int id, String name, double salary, String start_date, String gender) {
+public EmployeeInformation(int id, String name, double salary, String start_date, String gender) {
 	super();
 	this.id = id;
 	Name = name;
@@ -69,7 +69,7 @@ public StudentInformation(int id, String name, double salary, String start_date,
 }
 
 
-public StudentInformation(String name, double salary, String start_date, String gender) {
+public EmployeeInformation(String name, double salary, String start_date, String gender) {
 	super();
 	Name = name;
 	this.salary = salary;
@@ -78,6 +78,12 @@ public StudentInformation(String name, double salary, String start_date, String 
 }
 
 
+
+
+public EmployeeInformation(String name) {
+	super();
+	Name = name;
+}
 
 
 @Override
